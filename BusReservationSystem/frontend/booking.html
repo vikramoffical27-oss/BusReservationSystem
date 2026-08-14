@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>BusGo - Book Ticket</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     NAVBAR
+================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🚌 BusGo
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="searchbus.html">
+                Search
+            </a>
+        </li>
+
+        <li>
+            <a href="buses.html">
+                Buses
+            </a>
+        </li>
+
+        <li>
+            <a href="mybookings.html">
+                My Bookings
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ==================================================
+     MAIN CONTAINER
+================================================== -->
+
+<div class="booking-container">
+
+
+    <h1 class="booking-title">
+
+        🎟️ Book Your Ticket
+
+    </h1>
+
+
+    <!-- ==================================================
+         SELECTED BUS DETAILS
+    ================================================== -->
+
+    <div id="busDetails">
+
+        <div class="loading">
+            🚌 Loading bus details...
+        </div>
+
+    </div>
+
+
+    <!-- Hidden Bus ID -->
+
+    <input
+        type="hidden"
+        id="busId"
+    >
+
+
+    <!-- ==================================================
+         PASSENGER DETAILS
+    ================================================== -->
+
+    <div class="passenger-section">
+
+        <h2>
+            👤 Passenger Details
+        </h2>
+
+
+        <input
+            type="text"
+            id="passengerName"
+            placeholder="Passenger Name"
+        >
+
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Age"
+            min="1"
+            max="120"
+        >
+
+
+        <select id="gender">
+
+            <option value="">
+                Select Gender
+            </option>
+
+            <option value="Male">
+                Male
+            </option>
+
+            <option value="Female">
+                Female
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ==================================================
+         SEATS
+    ================================================== -->
+
+    <div class="seat-section">
+
+        <h2>
+            💺 Select Your Seat
+        </h2>
+
+
+        <div id="seats"></div>
+
+
+        <p class="selected-seat-text">
+
+            Selected Seat:
+
+            <b id="selectedSeat">
+                None
+            </b>
+
+        </p>
+
+    </div>
+
+
+    <!-- ==================================================
+         BOOK BUTTON
+    ================================================== -->
+
+    <button
+        type="button"
+        class="confirm-book-btn"
+        onclick="bookTicket()"
+    >
+
+        🎟️ Confirm & Book Ticket
+
+    </button>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadSelectedBus();
+
+        loadLoggedInEmail();
+
+        loadSeats();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
