@@ -1,18 +1,16 @@
-# Maven build files
-**/target/
+target/
+*.class
 
-# Eclipse
-.classpath
-.project
-.settings/
-
-# VS Code
 .vscode/
+.idea/
 
-# Logs
 *.log
-error.txt
-new-error.txt
 
-# Environment files
+error.txt
+error.log
+new-error.txt
+log.txt
+
 .env
+.env.*
+!.env.example
